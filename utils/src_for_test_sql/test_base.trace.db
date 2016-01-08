@@ -1,0 +1,205 @@
+01-08 13:30:36 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLException: Объект уже закрыт
+The object is already closed [90007-177]
+01-08 13:30:36 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLException: Объект уже закрыт
+The object is already closed [90007-177]
+01-08 13:30:37 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLException: Объект уже закрыт
+The object is already closed [90007-177]
+01-08 13:31:00 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLException: Объект уже закрыт
+The object is already closed [90007-177]
+01-08 13:31:00 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLException: Объект уже закрыт
+The object is already closed [90007-177]
+01-08 13:31:00 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLException: Объект уже закрыт
+The object is already closed [90007-177]
+01-08 13:31:00 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLException: Объект уже закрыт
+The object is already closed [90007-177]
+01-08 13:31:00 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLException: Объект уже закрыт
+The object is already closed [90007-177]
+01-08 13:31:02 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLException: Объект уже закрыт
+The object is already closed [90007-177]
+01-08 13:31:03 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLException: Объект уже закрыт
+The object is already closed [90007-177]
+01-08 13:31:03 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLException: Объект уже закрыт
+The object is already closed [90007-177]
+01-08 13:31:03 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLException: Объект уже закрыт
+The object is already closed [90007-177]
+01-08 13:34:26 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Объект уже закрыт
+The object is already closed [90007-177]
+01-08 13:34:26 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Объект уже закрыт
+The object is already closed [90007-177]
+01-08 13:34:26 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Объект уже закрыт
+The object is already closed [90007-177]
+01-08 13:34:59 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Объект уже закрыт
+The object is already closed [90007-177]
+01-08 13:35:07 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Объект уже закрыт
+The object is already closed [90007-177]
+01-08 13:35:07 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Объект уже закрыт
+The object is already closed [90007-177]
+01-08 13:35:07 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Объект уже закрыт
+The object is already closed [90007-177]
+01-08 13:35:08 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Объект уже закрыт
+The object is already closed [90007-177]
+01-08 13:35:09 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Объект уже закрыт
+The object is already closed [90007-177]
+01-08 13:35:09 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Объект уже закрыт
+The object is already closed [90007-177]
+01-08 13:35:09 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Объект уже закрыт
+The object is already closed [90007-177]
+01-08 14:33:10 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Объект уже закрыт
+The object is already closed [90007-177]
+01-08 14:33:10 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Объект уже закрыт
+The object is already closed [90007-177]
+01-08 14:33:10 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Объект уже закрыт
+The object is already closed [90007-177]
+01-08 14:33:10 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Объект уже закрыт
+The object is already closed [90007-177]
+01-08 14:33:11 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Объект уже закрыт
+The object is already closed [90007-177]
+01-08 14:33:17 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Объект уже закрыт
+The object is already closed [90007-177]
+01-08 14:33:17 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Объект уже закрыт
+The object is already closed [90007-177]
+01-08 14:33:23 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Объект уже закрыт
+The object is already closed [90007-177]
+01-08 14:33:23 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Объект уже закрыт
+The object is already closed [90007-177]
+01-08 14:33:35 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Объект уже закрыт
+The object is already closed [90007-177]
+01-08 14:33:35 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Объект уже закрыт
+The object is already closed [90007-177]
+01-08 14:33:35 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Объект уже закрыт
+The object is already closed [90007-177]
+01-08 14:33:35 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Объект уже закрыт
+The object is already closed [90007-177]
+01-08 14:33:35 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Объект уже закрыт
+The object is already closed [90007-177]
+01-08 14:33:37 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Объект уже закрыт
+The object is already closed [90007-177]
+01-08 14:33:38 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Объект уже закрыт
+The object is already closed [90007-177]
+01-08 14:33:38 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Объект уже закрыт
+The object is already closed [90007-177]
+01-08 14:33:38 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Объект уже закрыт
+The object is already closed [90007-177]
+01-08 14:35:39 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Объект уже закрыт
+The object is already closed [90007-177]
+01-08 14:35:39 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Объект уже закрыт
+The object is already closed [90007-177]
+01-08 14:35:39 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Объект уже закрыт
+The object is already closed [90007-177]
+01-08 14:35:40 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Объект уже закрыт
+The object is already closed [90007-177]
+01-08 14:35:48 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Объект уже закрыт
+The object is already closed [90007-177]
+01-08 14:35:48 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Объект уже закрыт
+The object is already closed [90007-177]
+01-08 14:35:48 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Объект уже закрыт
+The object is already closed [90007-177]
+01-08 14:35:48 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Объект уже закрыт
+The object is already closed [90007-177]
+01-08 14:35:48 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Объект уже закрыт
+The object is already closed [90007-177]
+01-08 14:35:48 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Объект уже закрыт
+The object is already closed [90007-177]
+01-08 14:35:48 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Объект уже закрыт
+The object is already closed [90007-177]
+01-08 14:35:48 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Объект уже закрыт
+The object is already closed [90007-177]
+01-08 14:35:58 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Объект уже закрыт
+The object is already closed [90007-177]
+01-08 14:35:58 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Объект уже закрыт
+The object is already closed [90007-177]
+01-08 14:35:58 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Объект уже закрыт
+The object is already closed [90007-177]
+01-08 14:35:58 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Объект уже закрыт
+The object is already closed [90007-177]
+01-08 14:35:58 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Объект уже закрыт
+The object is already closed [90007-177]
+01-08 14:35:58 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Объект уже закрыт
+The object is already closed [90007-177]
+01-08 14:35:58 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Объект уже закрыт
+The object is already closed [90007-177]
+01-08 14:48:18 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Объект уже закрыт
+The object is already closed [90007-177]
+01-08 14:48:18 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Объект уже закрыт
+The object is already closed [90007-177]
+01-08 14:48:19 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Объект уже закрыт
+The object is already closed [90007-177]
+01-08 14:48:19 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Объект уже закрыт
+The object is already closed [90007-177]
+01-08 14:49:26 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Объект уже закрыт
+The object is already closed [90007-177]
+01-08 14:49:26 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Объект уже закрыт
+The object is already closed [90007-177]
+01-08 14:49:26 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Объект уже закрыт
+The object is already closed [90007-177]
+01-08 14:57:29 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Таблица "TEST_SELECT1" не найдена
+Table "TEST_SELECT1" not found; SQL statement:
+select * from TEST_SELECT1 [42102-177]
