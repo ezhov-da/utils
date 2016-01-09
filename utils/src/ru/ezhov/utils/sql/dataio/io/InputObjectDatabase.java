@@ -101,7 +101,7 @@ public class InputObjectDatabase<T> {
         }
     }
 
-    public void addObject(Connection connection, T objectToAdd, String query) throws Exception {
+    public synchronized void addObject(Connection connection, T objectToAdd, String query) throws Exception {
         this.connection = connection;
         this.query = query;
         this.sizeBatch = 1;
