@@ -28,7 +28,7 @@ create table TEST_INSERT
     ,PRICE          decimal(18,6)       
 )
 --наполняем таблицу для тестирования выборки
-insert into TEST_INSERT (PRODUCT_NAME, PRICE) values (?,?),
+insert into TEST_INSERT (PRODUCT_NAME, PRICE) values (?,?)
 --проверяем внесение
 select * from TEST_INSERT
 

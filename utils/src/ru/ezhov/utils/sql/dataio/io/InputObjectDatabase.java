@@ -1,17 +1,15 @@
 package ru.ezhov.utils.sql.dataio.io;
 
 import java.lang.reflect.Field;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
-import java.util.List;
+import java.sql.*;
+import java.util.Collection;
+import java.util.Iterator;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import ru.ezhov.utils.sql.dataio.annotations.InputColumn;
-import ru.ezhov.utils.sql.dataio.annotations.InputDataObject;
+import ru.ezhov.utils.sql.dataio.annotations.*;
 
 /**
- * Класс вносит список объектов в базу данных
+ * Класс вносит данные в БД
  * <p>
  * @author ezhov_da
  * @param <T> - объект, который вносим в базу данных
@@ -19,14 +17,10 @@ import ru.ezhov.utils.sql.dataio.annotations.InputDataObject;
 public class InputObjectDatabase<T> {
 
     private static final Logger LOG = Logger.getLogger(InputObjectDatabase.class.getName());
-    private final Connection connection;
-
-    public InputObjectDatabase(Connection connection) {
-        if (connection == null) {
-            throw new IllegalArgumentException("подключение не должно быть null");
-        }
-        this.connection = connection;
-    }
+    private Connection connection;
+    private Collection<? super T> collection;
+    private String query;
+    private int sizeBatch;
 
     /**
      * Закрываем подключение в случае необходимости
@@ -44,60 +38,81 @@ public class InputObjectDatabase<T> {
     /**
      * Вносим данные в базу
      * <p>
-     * @param list - список объектов для внесения
+     * @param connection - подключение к БД
+     * @param collection - список объектов для внесения
      * @param query - запрос для внесения, должен выглядеть как стандартный
      * запрос java
-     * @param sizeBatch - какого размера делать butch
-     * <p>
-     * @return возвращаем true в случае внесения и false в случае ошибок
-     * <p>
-     * @throws SQLException
+     * @param sizeBatch - какого размера делать batch
+     * @throws Exception - перехватываем все исключения, так как только при
+     * корректном внесении применяем данные
      */
+    public synchronized void addCollection(Connection connection, Collection<? super T> collection, String query, int sizeBatch)
+            throws Exception {
+        this.connection = connection;
+        this.collection = collection;
+        this.query = query;
+        this.sizeBatch = sizeBatch;
+        execute();
+    }
+
     @SuppressWarnings("unchecked")
-    public synchronized boolean setDataToBase(List<T> list, String query, int sizeBatch)
-            throws SQLException {
+    private void execute() throws Exception {
         connection.setAutoCommit(false);
-        //получаем объект для выполнения запроса
-        PreparedStatement preparedStatement = connection.prepareStatement(query);
+        PreparedStatement preparedStatement = null;
+        int counterBatch = 0;
         try {
-            int sizeList = list.size(); //получаем размер списка
-            for (int i = 0; i < sizeList; i++) {
-                T c = (T) list.get(i);  //получаем объект класса
-                Class clazz = c.getClass(); // получаем класс
-                if (clazz.isAnnotationPresent(InputDataObject.class)) //проверяем анотацию на классе
-                {
-                    Field[] fields = clazz.getDeclaredFields(); //получаем список  полей
-                    for (Field field : fields) // перебираем поля
-                    {
-                        field.setAccessible(true); //делаем поле доступным
-                        if (field.isAnnotationPresent(InputColumn.class)) //проверяем аннтотациб на классе
-                        {
-                            InputColumn inputColumn = field.getAnnotation(InputColumn.class);   // получаем экземпляр аннотации
-                            int num = inputColumn.value(); //получаем значение
-                            Object object = field.get(c); //получаем значение поля
-                            preparedStatement.setObject(num, object);   //добавляем параметр
-                        }
-                    }
-                    preparedStatement.addBatch(); //добавляем строку в группу
-                    if (i % sizeBatch == 0) //смотрим, нужно ли выполнять группу
-                    {
-                        preparedStatement.executeBatch();
-                    }
-                } else {
-                    throw new ClassNotFoundException("объект не аннотирован аннотацией InputDataObject");
+            preparedStatement = connection.prepareStatement(query);
+            Iterator<? super T> iterator = collection.iterator();
+            while (iterator.hasNext()) {
+                counterBatch++;
+                T c = (T) iterator.next();
+                addToBatch(c, preparedStatement, counterBatch);
+            }
+            preparedStatement.executeBatch();
+            connection.commit();
+        } finally {
+            connection.setAutoCommit(true);
+            if (preparedStatement != null) {
+                preparedStatement.close();
+            }
+        }
+    }
+
+    @SuppressWarnings("unchecked")
+    private void addToBatch(T c, PreparedStatement preparedStatement, int counterBatch) throws Exception {
+        Class clazz = c.getClass();
+        if (clazz.isAnnotationPresent(InputDataObject.class)) {
+            Field[] fields = clazz.getDeclaredFields();
+            for (Field field : fields) {
+                field.setAccessible(true);
+                if (field.isAnnotationPresent(InputColumn.class)) {
+                    InputColumn inputColumn = field.getAnnotation(InputColumn.class);
+                    int num = inputColumn.value();
+                    Object object = field.get(c);
+                    preparedStatement.setObject(num, object);
                 }
             }
-            preparedStatement.executeBatch(); //выполняем если вдруг меньше данных, чем в установленой группе
-            connection.commit();                // делаем применение
-            connection.setAutoCommit(true); //делаем автокоммит true
-            return true;
-        } catch (ClassNotFoundException ex) {
-            LOG.log(Level.SEVERE, null, ex);
-        } catch (IllegalArgumentException ex) {
-            LOG.log(Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            LOG.log(Level.SEVERE, null, ex);
+            preparedStatement.addBatch();
+            if (counterBatch % sizeBatch == 0) {
+                preparedStatement.executeBatch();
+            }
+        } else {
+            throw new ClassNotFoundException("объект " + clazz.getName() + " не аннотирован аннотацией InputDataObject");
         }
-        return false;
+    }
+
+    public void addObject(Connection connection, T objectToAdd, String query) throws Exception {
+        this.connection = connection;
+        this.query = query;
+        this.sizeBatch = 1;
+        PreparedStatement preparedStatement = null;
+        try {
+            preparedStatement = connection.prepareStatement(query);
+            addToBatch(objectToAdd, preparedStatement, 0);
+        } finally {
+            if (preparedStatement != null) {
+                preparedStatement.close();
+            }
+        }
     }
 }

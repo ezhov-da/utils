@@ -2,14 +2,12 @@ package ru.ezhov.utils.sql.dataio.io;
 
 import java.math.BigDecimal;
 import ru.ezhov.utils.sql.dataio.annotations.OutputColumn;
-import ru.ezhov.utils.sql.dataio.annotations.OutputDataObject;
 
 /**
  *
  * @author ezhov_da
  */
-@OutputDataObject
-public class ObjectFromBase {
+public class OutputObjectWithoutAnnotation {
 
     @OutputColumn(nameColumn = "ID")
     private int id;
@@ -18,7 +16,7 @@ public class ObjectFromBase {
     @OutputColumn(nameColumn = "PRICE")
     private BigDecimal price;
 
-    public ObjectFromBase() {
+    public OutputObjectWithoutAnnotation() {
     }
 
     @Override

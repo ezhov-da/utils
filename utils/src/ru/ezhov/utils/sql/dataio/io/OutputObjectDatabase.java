@@ -40,14 +40,19 @@ public class OutputObjectDatabase<T> {
     }
 
     private Collection<? super T> execute() throws SQLException {
-        if (isAnnotationPresent()) {
-            fillCollection();
-        } else {
-            LOG.info("класс для построения списка не помечен необходимой аннотацией");
+        try {
+            if (isAnnotationPresent()) {
+                fillCollection();
+            } else {
+                throw new ClassNotFoundException("объект не аннотирован аннотацией OutputDataObject");
+            }
+        } catch (ClassNotFoundException ex) {
+            LOG.log(Level.WARNING, "ошибка аннотации", ex);
         }
         return this.outputCollection;
     }
 
+    @SuppressWarnings("unchecked")
     private boolean isAnnotationPresent() {
         return objectCreate.isAnnotationPresent(OutputDataObject.class);
     }

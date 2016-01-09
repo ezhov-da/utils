@@ -207,3 +207,47 @@ select * from TEST_SELECT1 [42102-177]
 org.h2.jdbc.JdbcSQLException: Таблица "TEST_SELECT1" не найдена
 Table "TEST_SELECT1" not found; SQL statement:
 select * from TEST_SELECT1 [42102-177]
+01-09 09:54:51 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Таблица "TEST_SELECT1" не найдена
+Table "TEST_SELECT1" not found; SQL statement:
+select * from TEST_SELECT1 [42102-177]
+01-09 09:55:11 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Таблица "TEST_SELECT1" не найдена
+Table "TEST_SELECT1" not found; SQL statement:
+select * from TEST_SELECT1 [42102-177]
+01-09 09:55:38 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Таблица "TEST_SELECT1" не найдена
+Table "TEST_SELECT1" not found; SQL statement:
+select * from TEST_SELECT1 [42102-177]
+01-09 09:56:32 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Таблица "TEST_SELECT1" не найдена
+Table "TEST_SELECT1" not found; SQL statement:
+select * from TEST_SELECT1 [42102-177]
+01-09 11:03:39 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Таблица "TEST_INSERT1" не найдена
+Table "TEST_INSERT1" not found; SQL statement:
+insert into TEST_INSERT1 (PRODUCT_NAME, PRICE) values (?,?) [42102-177]
+01-09 11:04:20 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Таблица "TEST_INSERT1" не найдена
+Table "TEST_INSERT1" not found; SQL statement:
+insert into TEST_INSERT1 (PRODUCT_NAME, PRICE) values (?,?) [42102-177]
+01-09 11:04:59 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Таблица "TEST_INSERT1" не найдена
+Table "TEST_INSERT1" not found; SQL statement:
+insert into TEST_INSERT1 (PRODUCT_NAME, PRICE) values (?,?) [42102-177]
+01-09 11:07:57 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Таблица "TEST_INSERT1" не найдена
+Table "TEST_INSERT1" not found; SQL statement:
+insert into TEST_INSERT1 (PRODUCT_NAME, PRICE) values (?,?) [42102-177]
+01-09 11:07:57 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Таблица "TEST_INSERT1" не найдена
+Table "TEST_INSERT1" not found; SQL statement:
+insert into TEST_INSERT1 (PRODUCT_NAME, PRICE) values (?,?) [42102-177]
+01-09 11:08:28 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Таблица "TEST_INSERT1" не найдена
+Table "TEST_INSERT1" not found; SQL statement:
+insert into TEST_INSERT1 (PRODUCT_NAME, PRICE) values (?,?) [42102-177]
+01-09 11:08:28 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Таблица "TEST_INSERT1" не найдена
+Table "TEST_INSERT1" not found; SQL statement:
+insert into TEST_INSERT1 (PRODUCT_NAME, PRICE) values (?,?) [42102-177]

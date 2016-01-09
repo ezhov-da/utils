@@ -21,7 +21,7 @@ public class OutputObjectDatabaseTest {
      * @throws Exception
      */
     @Test
-    public void testGetCollectionFromBaseList() throws Exception {
+    public void testGetCollectionList() throws Exception {
         Connection connection = null;
         try {
             Class.forName("org.h2.Driver");
@@ -30,7 +30,7 @@ public class OutputObjectDatabaseTest {
             String query = "select * from TEST_SELECT";
             ResultSet resultSet = connection.createStatement().executeQuery(query);
             OutputObjectDatabase instance = new OutputObjectDatabase();
-            Collection<ObjectFromBase> ioCollection = instance.getCollection(resultSet, ObjectFromBase.class, new ArrayList());
+            Collection<OutputObject> ioCollection = instance.getCollection(resultSet, OutputObject.class, new ArrayList());
             assertTrue(ioCollection.size() > 0);
         } finally {
             if (connection != null) {
@@ -45,7 +45,7 @@ public class OutputObjectDatabaseTest {
      * @throws Exception
      */
     @Test
-    public void testGetCollectionFromBaseSet() throws Exception {
+    public void testGetCollectionSet() throws Exception {
         Connection connection = null;
         try {
             Class.forName("org.h2.Driver");
@@ -54,8 +54,33 @@ public class OutputObjectDatabaseTest {
             String query = "select * from TEST_SELECT";
             ResultSet resultSet = connection.createStatement().executeQuery(query);
             OutputObjectDatabase instance = new OutputObjectDatabase();
-            Collection<ObjectFromBase> ioCollection = instance.getCollection(resultSet, ObjectFromBase.class, new HashSet());
+            Collection<OutputObject> ioCollection = instance.getCollection(resultSet, OutputObject.class, new HashSet());
             assertTrue(ioCollection.size() > 0);
+        } finally {
+            if (connection != null) {
+                connection.close();
+            }
+        }
+    }
+
+    /**
+     * тестируем корректное получение интерфейса Set
+     *
+     * @throws Exception
+     */
+    @Test
+    public void testGetCollectionErrorAnnotation() throws Exception {
+        Connection connection = null;
+        try {
+            Class.forName("org.h2.Driver");
+            File db = new File("src_for_test_sql/test_base");
+            connection = DriverManager.getConnection("jdbc:h2:" + db.getAbsolutePath());
+            String query = "select * from TEST_SELECT";
+            ResultSet resultSet = connection.createStatement().executeQuery(query);
+            OutputObjectDatabase instance = new OutputObjectDatabase();
+            Collection<OutputObjectWithoutAnnotation> ioCollection
+                    = instance.getCollection(resultSet, OutputObjectWithoutAnnotation.class, new HashSet());
+            assertTrue(ioCollection.isEmpty());
         } finally {
             if (connection != null) {
                 connection.close();
@@ -69,7 +94,7 @@ public class OutputObjectDatabaseTest {
      * @throws Exception
      */
     @Test(expected = Exception.class)
-    public void testGetCollectionFromBase() throws Exception {
+    public void testGetCollection() throws Exception {
         Connection connection = null;
         try {
             Class.forName("org.h2.Driver");
