@@ -28,7 +28,7 @@ public class OutputObjectDatabase<T> {
      * @return outputCollection
      * @throws java.sql.SQLException - ошибка при работе с БД
      */
-    public synchronized Collection<? super T> getCollectionFromBase(
+    public synchronized Collection<? super T> getCollection(
             ResultSet resultSet,
             Class objectCreate,
             Collection<T> outputCollection

@@ -22,7 +22,6 @@ public class OutputObjectDatabaseTest {
      */
     @Test
     public void testGetCollectionFromBaseList() throws Exception {
-        System.out.println("getCollectionFromBase");
         Connection connection = null;
         try {
             Class.forName("org.h2.Driver");
@@ -31,9 +30,7 @@ public class OutputObjectDatabaseTest {
             String query = "select * from TEST_SELECT";
             ResultSet resultSet = connection.createStatement().executeQuery(query);
             OutputObjectDatabase instance = new OutputObjectDatabase();
-            Collection ioCollection = new ArrayList();
-            assertEquals(ioCollection.size(), 0);
-            ioCollection = instance.getCollectionFromBase(resultSet, ObjectFromBase.class, ioCollection);
+            Collection<ObjectFromBase> ioCollection = instance.getCollection(resultSet, ObjectFromBase.class, new ArrayList());
             assertTrue(ioCollection.size() > 0);
         } finally {
             if (connection != null) {
@@ -49,7 +46,6 @@ public class OutputObjectDatabaseTest {
      */
     @Test
     public void testGetCollectionFromBaseSet() throws Exception {
-        System.out.println("getCollectionFromBase");
         Connection connection = null;
         try {
             Class.forName("org.h2.Driver");
@@ -58,9 +54,7 @@ public class OutputObjectDatabaseTest {
             String query = "select * from TEST_SELECT";
             ResultSet resultSet = connection.createStatement().executeQuery(query);
             OutputObjectDatabase instance = new OutputObjectDatabase();
-            Collection ioCollection = new HashSet();
-            assertEquals(ioCollection.size(), 0);
-            ioCollection = instance.getCollectionFromBase(resultSet, ObjectFromBase.class, ioCollection);
+            Collection<ObjectFromBase> ioCollection = instance.getCollection(resultSet, ObjectFromBase.class, new HashSet());
             assertTrue(ioCollection.size() > 0);
         } finally {
             if (connection != null) {
@@ -76,7 +70,6 @@ public class OutputObjectDatabaseTest {
      */
     @Test(expected = Exception.class)
     public void testGetCollectionFromBase() throws Exception {
-        System.out.println("getCollectionFromBase");
         Connection connection = null;
         try {
             Class.forName("org.h2.Driver");

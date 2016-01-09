@@ -203,3 +203,7 @@ The object is already closed [90007-177]
 org.h2.jdbc.JdbcSQLException: Таблица "TEST_SELECT1" не найдена
 Table "TEST_SELECT1" not found; SQL statement:
 select * from TEST_SELECT1 [42102-177]
+01-09 09:33:41 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Таблица "TEST_SELECT1" не найдена
+Table "TEST_SELECT1" not found; SQL statement:
+select * from TEST_SELECT1 [42102-177]
